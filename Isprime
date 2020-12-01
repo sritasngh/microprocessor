@@ -36,7 +36,7 @@ ISPRIME: MOV A,M
 	MOV A,E
 	CPI 01H
 	JNZ ISPRIME
-	MVI M,01H ;if the no is a prime no
+	MVI M,0FFH ;if the no is a prime no
 	RET
 NOTPRIME:MVI M, 00H ;if the no is not a prime no.
 	CALL MAIN

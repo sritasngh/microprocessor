@@ -1,18 +1,12 @@
-﻿Name: Sarita Singh 
-Roll No: 184544 
 Subject: ECD-311 Microprocessor theory and application  
-
-
 Lab Assignment: Submit 5 original unique program / instruction set based Multiple Choice questions with 4 choices and 1 correct answer marked with a short 4 sentence explanation for the right answer.
-
-
 
 
 Q.1. Initially B=05H, C=0H, A=0H, what will be the value at address 1004H after execution of the following code? 
    1. LXI H, 1000H
    2. MOV M, A
    3. INR A
-   4. Loop:         INX H
+   4. Loop: INX H
    5. MOV M, A
    6. DCX H
    7. ADD M
@@ -25,21 +19,15 @@ Q.1. Initially B=05H, C=0H, A=0H, what will be the value at address 1004H after 
 1. 5                  B. 6                  C. 4                D. 3
 
 
-
-
 Ans: D. 3
 Explanation: In Loop subroutine A is moved to the current address in line 1.5. New value of A will be A=[HL]+[HL-1] which will be inserted to the next address after conditional jump.So after execution of the code values at address starting with 1000H will be {0,1,1,2,3,5}. Hence at 10004H value is 3.
 
 
 
 
-
-
 Q.2. Initially A=19H, after incrementing A by 1 it has been rotated right circular twice. What will be the value in the A and Carry flag?
-1. A=86H ,CF=1                    b. A=0DH, CF=0
-                  c.   A=0DH, CF=1                        d. A=86H, CF=0
-
-
+a. A=86H ,CF=1                    b. A=0DH, CF=0
+c.   A=0DH, CF=1                  d. A=86H, CF=0
 
 
 Ans: a. A=86H ,CF=1
@@ -47,17 +35,15 @@ Explanation: After increment, A= 1AH. A=00011010 on the first RRC LSB of A goes 
 
 
 Q.3.  Choose the correct value in resistor C As soon as CF has set for the following code. Take N=10 and N=12. Initially: B=1, A= N and C=0.
-
-
-1. LOOP:    SUB B
+1. LOOP:        SUB B
 2.              INR C
 3.              INR B
 4.              INR B 
-5.                JMP LOOP
+5.              JMP LOOP
 
 
-1. C=3 for N=10 and C= 4 for N=12                  B. C=3 for N=10 and C= 3 for N=12
-     C. C=4 for N=10 and C= 4 for N=12                D. C=4 for N=10 and C= 5 for N=12
+A. C=3 for N=10 and C= 4 for N=12                  B. C=3 for N=10 and C= 3 for N=12
+C. C=4 for N=10 and C= 4 for N=12                  D. C=4 for N=10 and C= 5 for N=12
 
 
 Ans: B. C=3 for N=10 and C= 3 for N=12
@@ -65,56 +51,47 @@ Explanation: When loop is executed for nth time B= n2  which results in A=N-n2 a
 
 
 
-
-
-
 Q.4. Which of the following options is correct. Initially DE= 5H, B= 4H , C= 3H and HL= 00H.
         Loop1: DAD D
-DCR B
-                 JNZ Loop1
-XCHG
-LXI H, 0000H
-MOV B, C
-DCR C
-JZ Loop2
-JMP Loop1
-Loop2: HLT
+               DCR B
+               JNZ Loop1
+               XCHG
+               LXI H, 0000H
+               MOV B, C
+               DCR C
+               JZ Loop2
+               JMP Loop1
+        Loop2: HLT
+        
 1. Value of DE = 14H when instruction JMP LOOP1 executed for the first time.
 2. Value of DE = 3AH when instruction JMP LOOP1 executed for the 2nd time.
 3. Value of DE = 72H when instruction JMP LOOP1 executed for the 3rd time.
 4. Value of DE = 76H when instruction JMP LOOP1 executed for the last time.
 
 
-
-
 Ans: A. Value of DE = 14H when instruction JMP LOOP1 executed for the first time.
 Explanation: When first XCHG is executed B=0, HL=5H and DE=4*5H=14H. Then B=3H and C=2H that mean in next JMP Loop1 DE<-HL=B*DE =3*(4*5H) and in next JMP Loop1 DE<-HL=2*(3*(4*5H)) unless C=0. So on final Jump DE=1(2*(3*(4*5H))).
 
 
-
-
 Q.5 Interrupt RST_7.5 is called when a switch ‘s’ is closed. The output port is connected to a device which unlocks when the value stored at the address 7100H is 10. What’s the password of the device? 
-                        ORG 00H
-             JMP MAIN
-            MAIN:         EI 
-LXI H,7100H
+            ORG 00H
+            JMP MAIN
+            MAIN: EI 
+            LXI H,7100H
             MOV C, M
             LOOP: NOP
             JMP LOOP
             ORG 003CH
-           RST_7.5:  MOV A,C
-                 CMA
-                 INR A
-                 OUT CDH
-                 EI
-                 RET
+            RST_7.5:  MOV A,C
+                      CMA
+                      INR A
+                      OUT CDH
+                      EI
+                      RET
             HLT
 
 
 1. 155                b. 156                c. 246                 d. 256
-
-
-
 
 Ans. C. 246
 Explanation: When Interrupt arrives PC->ISR RST_7.5 with C= 10=AH. CMA results in A= F5H. INR A->A= F6H=246. So the password of the output device is option C.246.

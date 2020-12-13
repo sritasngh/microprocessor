@@ -13,7 +13,9 @@ ISR: Interrupt service routine; subroutine specially meant for interrupts.
 EI: enable interrupt; two cases 1. when reset 2. when you come out of ISR.
 NMI: non maskable interrupt (TRAP) 
 HLT: compiler won't read beyond this point (STOP execution).It's a assembler director.
-MMIO: memory mapped Input output (8085). IO is also mapped/ looks like memory address.
+MMIO: memory mapped Input output (8085). IO is also mapped/ looks like memory address.So any instruction that we use for memory can also use for IO.
+eg: STA (add_16-bit); LDA(add_16-bit); MOV M,A; We generate MEMR(Active low) and MEMW(active low) for these control signal insted of IOR and IOW.
+Limitation of IO over MIMO is that no operations can be done on IN and OUT data. IO is limited to accumulator.
 some addresses are mapped for memory and some addresses for address.
 IN p: address bus is 16 bit in 8085 and p is a 8-bit address, generally address is split into two, 
 lower address and higher address;so here p address is present for both Lower and higher order addresses. 
@@ -31,4 +33,19 @@ Machine cycle:time taken for one meaningful operation.
 Buffer:for long interconnect,buffer boost the signal without changing it(copy). One input and one enable.
 Two types inverter(Not with an enable) and buffer(back to back inverter;copy with boost the signal).
 Three states in a buffer(0/1/Z).
+Decoder selects one of the devices. so chip enable usually comes from the decoder.
+Partial order decoding: Multiple address points to same address location.i.e, there are some floating address lines.
+For input: there is a tristate buffer and through the tristate buffer any input will come. 
+for output: there is a lathch and output of the latch is connected to any output device.
+OPcode fetch is a memory operation; Need to read from the memory.
+All the instructions except push,jump,call,RNC and return has 4T Opcode.
+IN ABH has 3MC and 10Tstates. Here ABH is issued by the processor. And only then data is transfer from input device.Thah's why MC are OPcode+MR+IOR.
+In case of OUT ABH the only change in MC is instead of IOR there would be IOW.ALso here the data that is in the accumulator will go to output.
+ISR: Interrupt service routine. It is also called Interrupt controller. In modern day processor it is called exceptions.
+Exceptions include interrupt alog with some extra things.
+
+
+
+
+
 

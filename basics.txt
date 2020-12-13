@@ -9,4 +9,20 @@ The biggest advantage of this is it is processor specific.
 High level languages: It is converted to machine code using interpretor(python) or compiler(C/C++).
 Control registers: Settings for the processor.
 for selectively reset control register we use and operation.
-ISR: Interrupt service routine; subroutine specially meant for interrupts. 
+ISR: Interrupt service routine; subroutine specially meant for interrupts.
+EI: enable interrupt; two cases 1. when reset 2. when you come out of ISR.
+NMI: non maskable interrupt (TRAP) 
+HLT: compiler won't read beyond this point (STOP execution).It's a assembler director.
+MMIO: memory mapped Input output (8085). IO is also mapped/ looks like memory address.
+some addresses are mapped for memory and some addresses for address.
+IN p: address bus is 16 bit in 8085 and p is a 8-bit address, generally address is split into two, 
+lower address and higher address;so here p address is present for both Lower and higher order addresses. 
+And only the lower byte helps in denoting a particular addresses.
+LDA: load data into acc
+LDAX B: compiler will go to address contained in BC register and load the value on that address to A.
+
+
+
+
+
+

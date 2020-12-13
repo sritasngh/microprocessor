@@ -20,9 +20,15 @@ lower address and higher address;so here p address is present for both Lower and
 And only the lower byte helps in denoting a particular addresses.
 LDA: load data into acc
 LDAX B: compiler will go to address contained in BC register and load the value on that address to A.
-
-
-
-
-
+LHLD a: put content present at a address to L and a++ addess in H.
+NOP: No operations; for one machine cycle, buses and registers hold their value, they don't change.
+Used to adjust timing, when we are working with slower periferal devices.
+The main purpose of OR is to selectively set bits; AND helps you selectively reset bits.
+OUT p: IN and OUT select the device present at p address and here A content is put in data bus and transfer to output device.
+PSW: program status word: (A+Flags); PUSH PSW:A will be loaded at the higher address and flags at lower.
+PUSH and POP: ISR and when running out of registers.
+Machine cycle:time taken for one meaningful operation.
+Buffer:for long interconnect,buffer boost the signal without changing it(copy). One input and one enable.
+Two types inverter(Not with an enable) and buffer(back to back inverter;copy with boost the signal).
+Three states in a buffer(0/1/Z).
 

@@ -48,6 +48,5 @@ RST0 to 7 are reset instruction used for debugging during test-phase. They are n
 The interrupt RST 7.5,6.5,5.5 are interrupt whose address are sit betwwern these instrucion.
 Terminal count: when the timer hits zero and it goes back.
 Asynchronous: Independent of clock.
-
-
-
+Bit rate vs Baud rate:Bit rate is only data rate whereas baud rate also includes control bits.
+Baud rate is the rate of data transfer and control bits that transmitter and reciver is agree to and so it is known priore.

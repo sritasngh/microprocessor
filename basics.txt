@@ -50,3 +50,7 @@ Terminal count: when the timer hits zero and it goes back.
 Asynchronous: Independent of clock.
 Bit rate vs Baud rate:Bit rate is only data rate whereas baud rate also includes control bits.
 Baud rate is the rate of data transfer and control bits that transmitter and reciver is agree to and so it is known priore.
+Frame: It contains start bit, data bits, stop bits and may be some extra bits decided priore.
+simplex: one side transmission.
+half duplex: can transmite both side but not at the same time.
+full duplex: transmission of data occure both side(Tx to Rx & Rx to Tx) at the same time.

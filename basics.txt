@@ -54,3 +54,11 @@ Frame: It contains start bit, data bits, stop bits and may be some extra bits de
 simplex: one side transmission.
 half duplex: can transmite both side but not at the same time.
 full duplex: transmission of data occure both side(Tx to Rx & Rx to Tx) at the same time.
+No UART is there in 8085 so we kind of mimic UART.
+Delay in UART=1/(baud rate)
+SDE: serial data enable, for transmission of data this bit must be 1 in SIM register.
+XRA A: accumulator and carry flag is flushed.
+Interrupt controller: small execution unit that is going to poll all the interrupt and hold signal in case of SOC.
+SOC: system on chip.
+INTR is non vectered, maskable and lowest priority interrupt. ANd it's ISR address would be one of the RST instrucion given by user with the help of tristate buffer.
+RST has S,W,W machine cycles. when INTR is using RST so insted of RD(active low) in special opcode fetch machine cycle, there would be INTA(active low).And in opcode fetch(int special opcode fetch machine cycle), opcode of RST will be fetched. 

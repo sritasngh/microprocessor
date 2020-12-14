@@ -43,9 +43,9 @@ IN ABH has 3MC and 10Tstates. Here ABH is issued by the processor. And only then
 In case of OUT ABH the only change in MC is instead of IOR there would be IOW.ALso here the data that is in the accumulator will go to output.
 ISR: Interrupt service routine. It is also called Interrupt controller. In modern day processor it is called exceptions.
 Exceptions include interrupt alog with some extra things.
-
-
-
+Preemption:low priority interrupt can be interrupted by high proiority interrupt.It's not there in 8085.
+RST0 to 7 are reset instruction used for debugging during test-phase. They are not interrupt.
+The interrupt RST 7.5,6.5,5.5 are interrupt whose address are sit betwwern these instrucion.
 
 
 

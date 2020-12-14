@@ -1,6 +1,6 @@
 Microprocessor vs microcontroller: just cpu is microprocessor and cpu with other periferal devices like i/o port,RAM, 
 ROM, timer, counter, Interrupt controller is microcontroller or microcomputer.
-Counter vs timer: timer counts clockcycle whereas counter keep track of events.
+Counter vs timer: Timer counts clockcycle whereas counter keep track of events.In 8155 timer decrement with each clockcycle.
 word size: The processing capacity of ALU.(8-bit for 8085)
 1 byte has two nibbles: lower and heigher
 Machines code: Binary code that the processor understands.
@@ -46,6 +46,8 @@ Exceptions include interrupt alog with some extra things.
 Preemption:low priority interrupt can be interrupted by high proiority interrupt.It's not there in 8085.
 RST0 to 7 are reset instruction used for debugging during test-phase. They are not interrupt.
 The interrupt RST 7.5,6.5,5.5 are interrupt whose address are sit betwwern these instrucion.
+Terminal count: when the timer hits zero and it goes back.
+Asynchronous: Independent of clock.
 
 
 

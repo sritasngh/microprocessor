@@ -61,4 +61,6 @@ XRA A: accumulator and carry flag is flushed.
 Interrupt controller: small execution unit that is going to poll all the interrupt and hold signal in case of SOC.
 SOC: system on chip.
 INTR is non vectered, maskable and lowest priority interrupt. ANd it's ISR address would be one of the RST instrucion given by user with the help of tristate buffer.
-RST has S,W,W machine cycles. when INTR is using RST so insted of RD(active low) in special opcode fetch machine cycle, there would be INTA(active low).And in opcode fetch(int special opcode fetch machine cycle), opcode of RST will be fetched. 
+RST has S,W,W machine cycles. When INTR is using RST so insted of RD(active low) in special opcode fetch machine cycle, there would be INTA(active low).And in opcode fetch(int special opcode fetch machine cycle), opcode of RST will be fetched.
+TRAP is not capured anywhere inside meaning it will be high untill it is detected.It is edge(rising edge) triggered.
+RST 7.5 is also edge triggered but it is captured inside a FF so it can go low after short period of time.
